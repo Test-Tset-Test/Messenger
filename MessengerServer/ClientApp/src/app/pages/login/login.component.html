@@ -1,0 +1,12 @@
+<div>
+  <span>Authorization</span>
+  <div>
+    <form [formGroup]="formGroup" (ngSubmit)="submit()">
+      <label for="login">Login</label>
+      <input formControlName="mail" type="text" id="login">
+      <label for="password">Password</label>
+      <input formControlName="password" type="password" id="password">
+      <button>Go</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="sub-chat-list-container">
+  <div class="container-title">
+    <p>Чат</p>
+  </div>
+  <div class="container-user" *ngFor="let list of listChats" (click)="UP(list.id)">
+    <div>
+      <img class="container-user-avatar" src="{{list.avatar}}">
+    </div>
+    <div class="container-user-avatar-text">
+      <span>{{list.firstName}} </span>
+      <span>{{list.lastName}}</span>
+    </div>
+  </div>
+</div>

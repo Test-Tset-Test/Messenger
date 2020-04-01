@@ -1,0 +1,14 @@
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\BLL.deps.json
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\BLL.dll
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\BLL.pdb
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\Contracts.dll
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\DTO.dll
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\Contracts.pdb
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\bin\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.csprojAssemblyReference.cache
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfoInputs.cache
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.AssemblyInfo.cs
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.csproj.CopyComplete
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.dll
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\BLL\obj\Debug\netcoreapp3.1\BLL.pdb

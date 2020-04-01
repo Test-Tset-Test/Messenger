@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\DAL",
+    "\\DAL\\Entities",
+    "\\MessengerServer",
+    "\\MessengerServer\\Controllers",
+    "\\MessengerServer\\Models",
+    "\\MessengerServer\\Pages"
+  ],
+  "SelectedNode": "\\Messenger.sln",
+  "PreviewInSolutionExplorer": false
+}

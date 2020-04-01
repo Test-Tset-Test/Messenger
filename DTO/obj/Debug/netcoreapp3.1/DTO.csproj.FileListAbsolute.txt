@@ -1,0 +1,9 @@
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\bin\Debug\netcoreapp3.1\DTO.deps.json
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\bin\Debug\netcoreapp3.1\DTO.dll
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\bin\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\obj\Debug\netcoreapp3.1\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfoInputs.cache
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\obj\Debug\netcoreapp3.1\DTO.AssemblyInfo.cs
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\obj\Debug\netcoreapp3.1\DTO.dll
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\obj\Debug\netcoreapp3.1\DTO.pdb
+C:\Users\Daes\WebstormProjects\Messenger\Messenger\DTO\obj\Debug\netcoreapp3.1\DTO.csprojAssemblyReference.cache

@@ -1,0 +1,23 @@
+.message {
+  display: flex;
+  cursor: pointer;
+  &-img {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mini-chat-list {
+  position: absolute;
+  right: 180px;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.mini-chat {
+  position: absolute;
+  right: 400px;
+  bottom: 0;
+  border-radius: 10px;
+}

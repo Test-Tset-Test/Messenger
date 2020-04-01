@@ -1,0 +1,19 @@
+<div [ngClass]="{
+'sub-chat-container': userListChat.length > 0,
+'sub-chat-container-two': !userListChat.length > 0
+}">
+  <div class="container-user">
+    <div class="container-user-block" *ngFor="let list of userListChat">
+      <img class="container-user-avatar" src="{{list.avatar}}">
+    </div>
+  </div>
+  <div class="container-user-text" *ngIf="userListChat.length > 0">
+    <div class="container-user-text-2">
+      text
+    </div>
+    <div class="message-send-block">
+      <textarea class="message-send-block-text"></textarea>
+      <button class="message-send-block-btn">GO</button>
+    </div>
+  </div>
+</div>
