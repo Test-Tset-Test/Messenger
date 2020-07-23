@@ -27,5 +27,12 @@ namespace MessengerServer.Controllers
             //return us.Select(el => MiddleConversationVM.FromDto(el));
             return us.Select(el => MiddleConversationVM.FromDto(el));
         }
+
+        [HttpPost("messages")]
+        public IEnumerable<AllMessagesVM> GetAllMessages([FromBody] AllMessagesVM data)
+        {
+            var result = _userConversationService.getAllMessages(data.userId, data.conversationId);
+            return result.Select(el => AllMessagesVM.FromDto(el));
+        }
     }
 }

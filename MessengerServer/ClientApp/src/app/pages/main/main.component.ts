@@ -16,6 +16,9 @@ export class MainComponent implements OnInit, OnDestroy {
   @Input()
   public test: any;
 
+  public sadw = '<h3>sadwaws</h3>';
+  public name = '';
+
   private destroy$ = new Subject<void>();
   public user: UserModal;
 
@@ -40,8 +43,3 @@ export class MainComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 }
-
-/**
- SELECT * FROM MiddleConversations WHERE UserId = 2
-SELECT * FROM Messageses WHERE ConversationId = 1
- * */

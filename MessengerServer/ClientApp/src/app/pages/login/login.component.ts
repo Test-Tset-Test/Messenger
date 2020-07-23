@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.serviceAuth.regAuth(data).pipe(take(1)).subscribe((response: any) => {
       console.log(response.id);
       localStorage.setItem('authUser', response.id);
-      this.serviceAuth.userService = response;
+      this.serviceAuth.userData = response;
     });
   }
 }

@@ -2,13 +2,42 @@
   <div class="container-title">
     <p>Чат</p>
   </div>
-  <div class="container-user" *ngFor="let list of listChats" (click)="UP(list.id)">
-    <div>
-      <img class="container-user-avatar" src="{{list.avatar}}">
+  <div class="container-user" *ngFor="let list of listChats; let i = index" (click)="UP(list.conversationId, list.userId)"
+       (mouseover)="isGroupAvatar = i"
+       (mouseout)="isGroupAvatar = null"
+  >
+
+    <div class="container-user-group-block"
+    [hidden]="isGroupAvatar === i"
+    >
+      <img class="container-user-avatar" src="{{list.users[0].avatar}}">
+      <span>Group Chat</span>
     </div>
-    <div class="container-user-avatar-text">
-      <span>{{list.firstName}} </span>
-      <span>{{list.lastName}}</span>
-    </div>
+
+
+    <ng-container *ngIf="list.users.length <= 3">
+      <div class="container-user-group-block"
+           [hidden]="isGroupAvatar !== i"
+           *ngFor="let listAvatar of list.users"
+      >
+        <img class="container-user-avatar" src="{{listAvatar.avatar}}">
+      </div>
+    </ng-container>
+
+<!--    <ng-container *ngIf="list.users.length > 3">-->
+<!--      <div class="container-user-group-block"-->
+<!--           [hidden]="isGroupAvatar !== i"-->
+<!--      >-->
+<!--        <img class="container-user-avatar" src="{{list.users[0].avatar}}">-->
+<!--        <img class="container-user-avatar" src="{{list.users[1].avatar}}">-->
+<!--        <img class="container-user-avatar" src="{{list.users[2].avatar}}">-->
+<!--        <span class="container-user-group-block-ect">...</span>-->
+<!--      </div>-->
+<!--    </ng-container>-->
+
+<!--    <div class="container-user-avatar-text">-->
+<!--      <span>{{list.firstName}} </span>-->
+<!--      <span>{{list.lastName}}</span>-->
+<!--    </div>-->
   </div>
 </div>

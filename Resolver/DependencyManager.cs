@@ -12,11 +12,17 @@ namespace Resolver
     public class DependencyManager
     {
         public static void Resolve(IServiceCollection services) {
+
             services.AddScoped<IDatabaseInitalizer, DatabaseInitializer>();
+
             services.AddScoped<IUserRepository, UserRepositiry>();
             services.AddScoped<IUserService, UsersService>();
+
             services.AddScoped<IUserConversationRepository, UserConversationRepository>();
             services.AddScoped<IUserConversationService, UserConversationService>();
+
+            services.AddScoped<IChatConversationRepository, ChatConversationRepository>();
+            services.AddScoped<IChatConversationService, ChatConversationService>();
         }
     }
 }

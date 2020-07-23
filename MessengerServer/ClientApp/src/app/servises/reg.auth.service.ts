@@ -8,7 +8,7 @@ import {take} from 'rxjs/operators';
 
 @Injectable()
 export class RegAuthService {
-  public userService: UserModal;
+  public userData: UserModal;
 
   constructor(
     private authApiService: RegAuthApiService,

@@ -1,9 +1,12 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {UserService} from '../../servises/user.service';
 import {UserModal} from '../../models/user.modal';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {ChatService} from '../../servises/chat.service';
-import {takeUntil} from 'rxjs/operators';
+import {take, takeUntil} from 'rxjs/operators';
+import {AllMessages, MessageModel} from '../../models/Message.model';
+import {FormBuilder} from '@angular/forms';
+import {ConversationService} from '../../servises/conversation.service';
 
 @Component({
   selector: 'app-chat',
@@ -11,40 +14,53 @@ import {takeUntil} from 'rxjs/operators';
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit, OnDestroy {
-  @Input()
-  list: Array<UserModal>;
+
+  userName: string;
+  messageText: string;
+  private userInfo: UserModal;
+
   @Output()
   test = new EventEmitter();
-  testIdForChat: number;
-  disabled: boolean;
-
-  public arrayChat: Array<any>;
+  private subj = new Subject();
+  messages: Array<MessageModel>;
+  messageList?: Array<AllMessages>;
   private destroy$ = new Subject<UserModal>();
-  public userListChat: Array<UserModal> = [];
 
   constructor(
     private userService: UserService,
     private chatService: ChatService,
+    private messageService: ConversationService,
   ) {
+    this.messages = [];
+    this.messageList = [];
   }
 
-  ngOnInit(
-  ): void {
-    this.chatService.arrayUserForChat$.pipe(takeUntil(this.destroy$)).subscribe((response: any) => {
-      this.userListChat = response;
-      console.log(this.userListChat);
+  ngOnInit(): void {
+    this.userService.getUserData.pipe(take(1)).subscribe((response: UserModal) => {
+      this.userInfo = response;
     });
+this.chatService.arrayUserForChat$.pipe(takeUntil(this.destroy$)).subscribe((response: any) => {
+  this.chatService.getAllMessage(response).pipe(take(1)).subscribe((responses: any) => {
+    this.messageList = responses;
+    console.log(this.messageList);
+  });
+});
+    this.messageService.messagesStream
+      .subscribe(this.newMessageEventHandler.bind(this));
   }
 
-  @Input()
-  addUserList() {
-    this.userService.getUserById(1).pipe().subscribe((response: any) => {
-      this.userListChat.push(response);
-    });
+  private newMessageEventHandler(event: AllMessages): void {
+    event.userIdSend = this.userInfo.id;
+    console.log(this.userInfo);
+    this.messageList.push(event);
+    console.log(this.messageList);
   }
 
-  getUserList() {
-    this.list = this.userService.getUserList();
+
+  send(userIdSend, conversationId, text: string): void {
+    const messageChannel = 'my-channel-chat';
+    this.messageService.send({message: text, userIdSend: userIdSend, conversationId: conversationId, messageChannel: messageChannel, userId: this.userInfo.id}).pipe(take(1)).subscribe();
+    this.messageText = '';
   }
 
   ngOnDestroy(): void {

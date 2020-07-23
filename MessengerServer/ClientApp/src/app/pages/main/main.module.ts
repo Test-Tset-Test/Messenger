@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {MainComponent} from './main.component';
@@ -10,13 +10,14 @@ import {ChatModule} from '../../Messenger/chat/chat.module';
   declarations: [
     MainComponent,
   ],
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    RouterModule,
-    ChatModule,
-    ChatListModule
-  ],
+    imports: [
+        ReactiveFormsModule,
+        CommonModule,
+        RouterModule,
+        ChatModule,
+        ChatListModule,
+        FormsModule
+    ],
   exports: [
     MainComponent
   ],

@@ -1,7 +1,17 @@
-<a class="message" (click)="message()">
-  <img class="message-img" src="assets/icon/facebook-messenger-3.svg"/>
-  <span>Message</span>
-</a>
+<div class="message">
+  <div>
+    <a class="message-block" (click)="message()">
+      <img class="message-img" src="assets/icon/facebook-messenger-3.svg"/>
+      <span>Message</span>
+    </a>
+  </div>
+
+  <div>
+    <a class="message-block" (click)="message()">
+      <img class="message-img" src="assets/icon/facebook-messenger-3.svg"/>
+    </a>
+  </div>
+</div>
 
 <div class="mini-chat-list">
   <app-chat-list></app-chat-list>

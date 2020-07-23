@@ -18,7 +18,7 @@ import {UserService} from '../../servises/user.service';
     ChatListComponent
   ],
   providers: [
-    UserService
+    UserService,
   ],
 })
 export class ChatListModule {

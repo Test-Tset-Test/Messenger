@@ -21,5 +21,17 @@ namespace BLL
             var result = this._userConversationRepository.GetListChat(UserId);
             return result;
         }
+
+        public List<MessagesDto> getAllMessages(int userIdSend, int conversationId)
+        {
+            var result = this._userConversationRepository.getAllMessages(userIdSend, conversationId);
+            return result;
+        }
+
+        public bool addMessage (int userIdSend, int conversationId, string message)
+        {
+            var result = this._userConversationRepository.addMessage(userIdSend, conversationId, message);
+            return result;
+        }
     }
 }

@@ -18,7 +18,14 @@ export class ChatApiService {
   }
 
   getChatList = (id): Observable<ChatId> => {
-    console.log(id);
     return this.baseApiService.post('/conversations/chatList', id);
+  }
+
+  getAllMessage = (data): Observable<any> => {
+    return this.baseApiService.post('/conversations/messages', data);
+  }
+
+  openChat = (dataChat): Observable<any> => {
+    return this.baseApiService.post('/conversations/openChat', dataChat);
   }
 }

@@ -10,7 +10,6 @@ namespace MessengerServer.Models
     {
         public int UserId { get; set; }
         public int ConversationId { get; set; }
-        public int ChatId { get; set; }
         public Object Users { get; set; }
 
 

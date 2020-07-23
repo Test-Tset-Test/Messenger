@@ -1,19 +1,45 @@
 <div [ngClass]="{
-'sub-chat-container': userListChat.length > 0,
-'sub-chat-container-two': !userListChat.length > 0
+'sub-chat-container': messageList.length > 0,
+'sub-chat-container-two': !messageList.length > 0
 }">
   <div class="container-user">
-    <div class="container-user-block" *ngFor="let list of userListChat">
-      <img class="container-user-avatar" src="{{list.avatar}}">
+    <div class="container-user-block" >
+      <img class="container-user-avatar" src="\assets\avatar\avatarOne.jpg">
     </div>
   </div>
-  <div class="container-user-text" *ngIf="userListChat.length > 0">
+  <div class="container-user-text" *ngIf="messageList.length > 0">
     <div class="container-user-text-2">
-      text
+      <ng-container class="container-user-messages" >
+        <ng-container *ngFor="let msg of messageList">
+          <div [ngClass]="{
+        'container-user-messages-send': msg.userId === msg.userIdSend,
+        'container-user-messages-receiver': msg.userId !== msg.userIdSend
+        }">
+            <div class="container-user-messages-text">{{msg.message}}</div>
+          </div>
+        </ng-container>
+      </ng-container>
     </div>
     <div class="message-send-block">
-      <textarea class="message-send-block-text"></textarea>
-      <button class="message-send-block-btn">GO</button>
+      <textarea class="message-send-block-text" [(ngModel)]="messageText"></textarea>
+      <button class="message-send-block-btn" (click)="send(messageList[0].userIdSend, messageList[0].conversationId, messageText)">GO</button>
     </div>
   </div>
+<!--  <div class="container-user">
+    <div>TEXT</div>
+    <div class="container-user-block" *ngFor="let list of messages">
+      <div>TEXT</div>
+      {{list.user}} : {{list.text}}
+    </div>
+
+  <div >
+
+    <div></div>
+    <label for="message">Message</label>
+    <input type="text" id="message" [(ngModel)]="messageText">
+
+
+    <button (click)="newMessage(null, messageText)">Send</button>
+  </div>
+</div>-->
 </div>

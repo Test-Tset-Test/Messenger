@@ -11,36 +11,13 @@ export class UserApiServerice {
   constructor(
     private serviceBase: BaseApiService,
   ) {
-    this.list = [
-      {
-        id: 1,
-        firstName: 'NameOne',
-        lastName: 'NameTwo',
-        avatar: '/assets/avatar/avatarOne.jpg',
-        mail: 'mail@mailOne.com',
-        password: '1'
-      },
-      {
-        id: 2,
-        firstName: 'NameTwo',
-        lastName: 'NameTwo',
-        avatar: '/assets/avatar/avatarTwo.jpg',
-        mail: 'mail@mailTwo.com',
-        password: '12'
-      },
-      {
-        id: 3,
-        firstName: 'NameThree',
-        lastName: 'NameThree',
-        avatar: '/assets/avatar/avatarThree.jpg',
-        mail: 'mail@mailThree.com',
-        password: '123'
-      }
-    ];
+  }
+
+  getUserInfo(id): Observable<any> {
+    return this.serviceBase.post<any>('/users/getUserById' + '/' + id);
   }
 
   getUserListApi = (): Observable<HttpEvent<any>> => {
-    console.log('asdwas');
     return this.serviceBase.get<any>('/users/userList');
   }
 

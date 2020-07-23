@@ -7,43 +7,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
 
-  &-block {
-  }
-
-  .container-user {
-    display: flex;
-    margin-top: 6px;
-    margin-left: 6px;
-    font-size: 12px;
-    height: 32px;
-    align-items: center;
-    cursor: pointer;
-
-    &-avatar {
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      margin-right: 6px;
-    }
-
-    &-block {
-      &:hover {
-        background: gray;
-      }
-    }
-
-    &-text {
-      display: flex;
-      flex-direction: column;
-      height: 250px;
-      &-2 {
-        flex: 1;
-      }
-    }
-  }
-
   .message-send-block {
     display: flex;
+
     &-text {
       resize: none;
       border-radius: 7px;
@@ -57,6 +23,63 @@
   }
 
 
+}
+
+.container-user {
+  display: flex;
+  margin-top: 6px;
+  margin-left: 6px;
+  font-size: 12px;
+  height: 32px;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+
+  &-avatar {
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    margin-right: 6px;
+  }
+
+  &-block {
+    &:hover {
+      background: gray;
+    }
+  }
+
+  &-messages {
+    &-send {
+      background-color: #0700c2;
+      border-radius: 9px;
+      color: #ffffff;
+      width: 112px;
+      margin-left: 86px;
+    }
+
+    &-receiver {
+      background-color: #376fc2;
+      border-radius: 9px;
+      color: #ffffff;
+      width: 112px;
+    }
+
+    &-text {
+
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    margin-top: 3px;
+
+    &-2 {
+      flex: 1;
+      overflow: auto;
+    }
+  }
 }
 
 .sub-chat-container-two {

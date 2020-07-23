@@ -18,6 +18,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ChatService} from './servises/chat.service';
 import {RegAuthApiService} from './api/reg.auth.service';
 import {ChatApiService} from './api/ChatApiService';
+import {PusherService} from './api/pusher.api.service';
+import {ConversationService} from './servises/conversation.service';
 
 const clientRoute: Routes = [{
   path: '',
@@ -43,7 +45,8 @@ const clientRoute: Routes = [{
     ChatPageModule,
     HttpClientModule,
   ],
-  providers: [UserApiServerice, RegAuthService, BaseApiService, ChatService, RegAuthApiService, ChatApiService, AuthGuard],
+  providers: [UserApiServerice, RegAuthService, BaseApiService, ChatService, RegAuthApiService,
+    ChatApiService, PusherService, ConversationService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
